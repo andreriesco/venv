@@ -18,6 +18,7 @@ jobs:
           PLATFORM_CLIENT_SECRET: ${{ secrets.PLATFORM_CLIENT_SECRET }}
           PLATFORM_CREDENTIALS: ${{ secrets.PLATFORM_CREDENTIALS }}
         run: |
+          Get-ChildItem env:
           $_settings = (Get-Content ./.vscode/settings.json | ConvertFrom-Json)
           $env:TORIZON_ARCH = $_settings.torizon_arch
           if ($env:TORIZON_ARCH -eq "aarch64") { $env:TORIZON_ARCH = "arm64" }
