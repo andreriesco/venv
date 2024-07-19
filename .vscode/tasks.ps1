@@ -70,6 +70,7 @@ if ($env:TASKS_USE_PWSH_INSTEAD_BASH -eq $true) {
 
 if ($null -eq $env:TASKS_CUSTOM_SETTINGS_JSON) {
     $env:TASKS_CUSTOM_SETTINGS_JSON = "settings.json"
+    Write-Host "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 } else {
     Write-Host "ℹ️ :: CUSTOM SETTINGS :: ℹ️"
     Write-Host "Using custom settings file: $env:TASKS_CUSTOM_SETTINGS_JSON"
