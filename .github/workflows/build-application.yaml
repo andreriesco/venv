@@ -18,7 +18,6 @@ jobs:
           PLATFORM_CLIENT_SECRET: ${{ secrets.PLATFORM_CLIENT_SECRET }}
           PLATFORM_CREDENTIALS: ${{ secrets.PLATFORM_CREDENTIALS }}
         run: |
-          Get-ChildItem env:
           $_settings = (Get-Content ./.vscode/settings.json | ConvertFrom-Json)
           $env:TORIZON_ARCH = $_settings.torizon_arch
           if ($env:TORIZON_ARCH -eq "aarch64") { $env:TORIZON_ARCH = "arm64" }
@@ -43,6 +42,7 @@ jobs:
           PLATFORM_CLIENT_ID: ${{ secrets.PLATFORM_CLIENT_ID }}
           PLATFORM_CLIENT_SECRET: ${{ secrets.PLATFORM_CLIENT_SECRET }}
         run: |
+          Get-ChildItem env:
           ./.vscode/tasks.ps1 run run-torizon-binfmt
           ./.vscode/tasks.ps1 run tcb-platform-publish
 
