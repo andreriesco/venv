@@ -119,6 +119,8 @@ if ([string]::IsNullOrEmpty($tag)) {
     }
 }
 
+Write-Host "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+
 if ($null -eq $env:TASKS_CUSTOM_SETTINGS_JSON) {
     $env:TASKS_CUSTOM_SETTINGS_JSON = "settings.json"
 } else {
