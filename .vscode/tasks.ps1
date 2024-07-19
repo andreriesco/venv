@@ -68,17 +68,9 @@ if ($env:TASKS_USE_PWSH_INSTEAD_BASH -eq $true) {
     $_usePwshInsteadBash = $false;
 }
 
-if (($null -eq $env:TASKS_CUSTOM_SETTINGS_JSON) -or ($env:TASKS_CUSTOM_SETTINGS_JSON -eq "settings.json")) {
-    $env:TASKS_CUSTOM_SETTINGS_JSON = "settings.json"
-    Write-Host "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-} else {
-    Write-Host "ℹ️ :: CUSTOM SETTINGS :: ℹ️"
-    Write-Host "Using custom settings file: $env:TASKS_CUSTOM_SETTINGS_JSON"
-}
-
 try {
     $tasksFileContent = Get-Content $PSScriptRoot/tasks.json
-    $settingsFileContent = Get-Content $PSScriptRoot/$env:TASKS_CUSTOM_SETTINGS_JSON
+    $settingsFileContent = Get-Content $PSScriptRoot/settings.json
     $json = $tasksFileContent | ConvertFrom-Json
     $settings = $settingsFileContent | ConvertFrom-Json
     $inputs = $json.inputs
