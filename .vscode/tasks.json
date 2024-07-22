@@ -339,7 +339,7 @@
                 "${command:docker_login}",
                 "${command:docker_tag}",
                 "${command:docker_registry}",
-                "ghjgh",
+                "venv",
                 "${config:torizon_gpu}"
             ],
             "dependsOrder": "sequence",
@@ -480,10 +480,18 @@
                 "id": "cloud-upload",
                 "color": "terminal.ansiYellow"
             },
-            "dependsOrder": "sequence",
             "dependsOn": [
                 "create-production-image"
-            ]
+            ],
+            "dependsOrder": "sequence",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true
+            },
         },
         {
             "label": "docker-login",
@@ -956,7 +964,7 @@
                 "SSH_DEBUG_PORT=${config:torizon_debug_ssh_port}",
                 "--build-arg",
                 "GPU=${config:torizon_gpu}",
-                "ghjgh-debug"
+                "venv-debug"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -1000,7 +1008,7 @@
                 "SSH_DEBUG_PORT=${config:torizon_debug_ssh_port}",
                 "--build-arg",
                 "GPU=${config:torizon_gpu}",
-                "ghjgh-debug"
+                "venv-debug"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -1044,7 +1052,7 @@
                 "SSH_DEBUG_PORT=${config:torizon_debug_ssh_port}",
                 "--build-arg",
                 "GPU=${config:torizon_gpu}",
-                "ghjgh-debug"
+                "venv-debug"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -1088,7 +1096,7 @@
                 "SSH_DEBUG_PORT=${config:torizon_debug_ssh_port}",
                 "--build-arg",
                 "GPU=${config:torizon_gpu}",
-                "ghjgh-debug"
+                "venv-debug"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -1114,7 +1122,7 @@
                 "${workspaceFolder}/Dockerfile.sdk",
                 "${workspaceFolder}",
                 "-t",
-                "cross-toolchain-arm64-ghjgh",
+                "cross-toolchain-arm64-venv",
                 "--build-arg",
                 "IMAGE_ARCH=arm64",
                 "--build-arg",
@@ -1148,7 +1156,7 @@
                 "${workspaceFolder}/Dockerfile.sdk",
                 "${workspaceFolder}",
                 "-t",
-                "cross-toolchain-arm-ghjgh",
+                "cross-toolchain-arm-venv",
                 "--build-arg",
                 "IMAGE_ARCH=arm",
                 "--build-arg",
@@ -1180,7 +1188,7 @@
                 "${workspaceFolder}/Dockerfile.sdk",
                 "${workspaceFolder}",
                 "-t",
-                "cross-toolchain-amd64-ghjgh",
+                "cross-toolchain-amd64-venv",
                 "--build-arg",
                 "IMAGE_ARCH=amd64",
                 "--build-arg",
@@ -1212,7 +1220,7 @@
                 "${workspaceFolder}/Dockerfile.sdk",
                 "${workspaceFolder}",
                 "-t",
-                "cross-toolchain-riscv64-ghjgh",
+                "cross-toolchain-riscv64-venv",
                 "--build-arg",
                 "IMAGE_ARCH=riscv64",
                 "--build-arg",
@@ -1246,7 +1254,7 @@
                 "docker",
                 "compose",
                 "push",
-                "ghjgh-debug"
+                "venv-debug"
             ],
             "dependsOrder": "sequence",
             "problemMatcher": "$msCompile",
@@ -1271,7 +1279,7 @@
                 "docker",
                 "compose",
                 "push",
-                "ghjgh-debug"
+                "venv-debug"
             ],
             "dependsOrder": "sequence",
             "problemMatcher": "$msCompile",
@@ -1296,7 +1304,7 @@
                 "docker",
                 "compose",
                 "push",
-                "ghjgh-debug"
+                "venv-debug"
             ],
             "dependsOrder": "sequence",
             "problemMatcher": "$msCompile",
@@ -1321,7 +1329,7 @@
                 "docker",
                 "compose",
                 "push",
-                "ghjgh-debug"
+                "venv-debug"
             ],
             "dependsOrder": "sequence",
             "problemMatcher": "$msCompile",
@@ -1347,7 +1355,7 @@
                 "-o",
                 "StrictHostKeyChecking=no",
                 "torizon@${config:torizon_ip}",
-                "LOCAL_REGISTRY=${config:host_ip} TAG=arm64 docker compose pull ghjgh-debug"
+                "LOCAL_REGISTRY=${config:host_ip} TAG=arm64 docker compose pull venv-debug"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -1376,7 +1384,7 @@
                 "-o",
                 "StrictHostKeyChecking=no",
                 "torizon@${config:torizon_ip}",
-                "LOCAL_REGISTRY=${config:host_ip} TAG=arm docker compose pull ghjgh-debug"
+                "LOCAL_REGISTRY=${config:host_ip} TAG=arm docker compose pull venv-debug"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -1405,7 +1413,7 @@
                 "-o",
                 "StrictHostKeyChecking=no",
                 "torizon@${config:torizon_ip}",
-                "LOCAL_REGISTRY=${config:host_ip} TAG=amd64 docker compose pull ghjgh-debug"
+                "LOCAL_REGISTRY=${config:host_ip} TAG=amd64 docker compose pull venv-debug"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -1434,7 +1442,7 @@
                 "-o",
                 "StrictHostKeyChecking=no",
                 "torizon@${config:torizon_ip}",
-                "LOCAL_REGISTRY=${config:host_ip} TAG=riscv64 docker compose pull ghjgh-debug"
+                "LOCAL_REGISTRY=${config:host_ip} TAG=riscv64 docker compose pull venv-debug"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -1462,7 +1470,7 @@
                 "torizon",
                 "up",
                 "-d",
-                "ghjgh-debug"
+                "venv-debug"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -1490,7 +1498,7 @@
                 "torizon",
                 "up",
                 "-d",
-                "ghjgh-debug"
+                "venv-debug"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -1518,7 +1526,7 @@
                 "torizon",
                 "up",
                 "-d",
-                "ghjgh-debug"
+                "venv-debug"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -1546,7 +1554,7 @@
                 "torizon",
                 "up",
                 "-d",
-                "ghjgh-debug"
+                "venv-debug"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -1584,7 +1592,7 @@
                 "IMAGE_ARCH=arm64",
                 "--build-arg",
                 "GPU=${config:torizon_gpu}",
-                "ghjgh"
+                "venv"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -1622,7 +1630,7 @@
                 "IMAGE_ARCH=arm",
                 "--build-arg",
                 "GPU=${config:torizon_gpu}",
-                "ghjgh"
+                "venv"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -1660,7 +1668,7 @@
                 "IMAGE_ARCH=amd64",
                 "--build-arg",
                 "GPU=${config:torizon_gpu}",
-                "ghjgh"
+                "venv"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -1698,7 +1706,7 @@
                 "IMAGE_ARCH=riscv64",
                 "--build-arg",
                 "GPU=${config:torizon_gpu}",
-                "ghjgh"
+                "venv"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -1726,7 +1734,7 @@
                 "docker",
                 "compose",
                 "push",
-                "ghjgh"
+                "venv"
             ],
             "dependsOn": [
                 "build-container-torizon-release-arm64"
@@ -1754,7 +1762,7 @@
                 "docker",
                 "compose",
                 "push",
-                "ghjgh"
+                "venv"
             ],
             "dependsOn": [
                 "build-container-torizon-release-arm"
@@ -1782,7 +1790,7 @@
                 "docker",
                 "compose",
                 "push",
-                "ghjgh"
+                "venv"
             ],
             "dependsOn": [
                 "build-container-torizon-release-amd64"
@@ -1810,7 +1818,7 @@
                 "docker",
                 "compose",
                 "push",
-                "ghjgh"
+                "venv"
             ],
             "dependsOn": [
                 "build-container-torizon-release-riscv64"
@@ -1839,7 +1847,7 @@
                 "-o",
                 "StrictHostKeyChecking=no",
                 "torizon@${config:torizon_ip}",
-                "DOCKER_LOGIN=${config:host_ip}:5002 TAG=arm64 docker compose pull ghjgh"
+                "DOCKER_LOGIN=${config:host_ip}:5002 TAG=arm64 docker compose pull venv"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -1868,7 +1876,7 @@
                 "-o",
                 "StrictHostKeyChecking=no",
                 "torizon@${config:torizon_ip}",
-                "DOCKER_LOGIN=${config:host_ip}:5002 TAG=arm docker compose pull ghjgh"
+                "DOCKER_LOGIN=${config:host_ip}:5002 TAG=arm docker compose pull venv"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -1897,7 +1905,7 @@
                 "-o",
                 "StrictHostKeyChecking=no",
                 "torizon@${config:torizon_ip}",
-                "DOCKER_LOGIN=${config:host_ip}:5002 TAG=amd64 docker compose pull ghjgh"
+                "DOCKER_LOGIN=${config:host_ip}:5002 TAG=amd64 docker compose pull venv"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -1926,7 +1934,7 @@
                 "-o",
                 "StrictHostKeyChecking=no",
                 "torizon@${config:torizon_ip}",
-                "DOCKER_LOGIN=${config:host_ip}:5002 TAG=riscv64 docker compose pull ghjgh"
+                "DOCKER_LOGIN=${config:host_ip}:5002 TAG=riscv64 docker compose pull venv"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -1952,7 +1960,7 @@
                 "-p",
                 "torizon",
                 "up",
-                "ghjgh"
+                "venv"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -1985,7 +1993,7 @@
                 "-p",
                 "torizon",
                 "up",
-                "ghjgh"
+                "venv"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -2018,7 +2026,7 @@
                 "-p",
                 "torizon",
                 "up",
-                "ghjgh"
+                "venv"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [
@@ -2051,7 +2059,7 @@
                 "-p",
                 "torizon",
                 "up",
-                "ghjgh"
+                "venv"
             ],
             "dependsOrder": "sequence",
             "dependsOn": [

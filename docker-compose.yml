@@ -1,16 +1,16 @@
 version: "3.9"
 services:
-  ghjgh-debug:
+  venv-debug:
     build:
       context: .
       dockerfile: Dockerfile.debug
-    image: ${LOCAL_REGISTRY}:5002/ghjgh-debug:${TAG}
+    image: ${LOCAL_REGISTRY}:5002/venv-debug:${TAG}
     ports:
       - 6502:6502
       - 6512:6512
-    
-  ghjgh:
+
+  venv:
     build:
       context: .
       dockerfile: Dockerfile
-    image: ${DOCKER_LOGIN}/ghjgh:${TAG}
+    image: ${DOCKER_LOGIN}/venv:${TAG}

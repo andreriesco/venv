@@ -15,14 +15,14 @@
   "torizon_run_as": "torizon",
   "torizon_app_root": "/home/torizon/app",
   "tcb.packageName": "venv",
-  "tcb.version": "3.8.1",
+  "tcb.version": "3.10.0",
   "torizon.gpuPrefixRC": true,
   "python.defaultInterpreterPath": "./.venv/bin/python3",
   "docker_registry": "",
   "docker_login": "andreriesco",
   "docker_password": "secret",
   "docker_tag": "1",
-  "tcb.clientId": "tzn_api_89d2781c-fc9a-44b6-8deb-4db026aaa0b4_WF7nsX",
-  "tcb.clientSecret": "secret",
-  "tcb.fleetName": "myfleet"
+  "tcb.fleetName": "my-fleet",
+  "tcb.clientId": "tzn_api_89d2781c-fc9a-44b6-8deb-4db026aaa0b4_KeMOlQ",
+  "tcb.clientSecret": "secret"
 }
